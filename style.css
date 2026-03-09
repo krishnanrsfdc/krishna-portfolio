@@ -45,7 +45,7 @@ body::before {
   inset: 0;
   background:
     linear-gradient(rgba(3, 45, 96, 0.82), rgba(4, 30, 66, 0.88)),
-    url('assets/salesforce Image 1.jpg') center/cover no-repeat;
+    url('assets/sf-bg.jpg') center/cover no-repeat;
   z-index: -1;
   pointer-events: none;
 }
