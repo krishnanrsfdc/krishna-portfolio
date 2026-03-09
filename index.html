@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Krishna Nagalla &mdash; Sr. Salesforce Developer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Salesforce Cloud Cursor -->
+  <div class="cur-dot" id="curDot">
+    <img src="assets/sf-cloud.svg" class="sf-cursor-img" alt="" draggable="false" />
+  </div>
+  <div class="cur-ring" id="curRing"><span class="cur-label" id="curLabel"></span></div>
+
+  <!-- Trail canvas (above particles, below cursor) -->
+  <canvas id="trailCanvas"></canvas>
+
+  <!-- Background particle canvas -->
+  <canvas id="particleCanvas"></canvas>
+
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a class="nav-logo" href="#home">
+        <span class="logo-bracket">&lt;</span>Krishna<span class="logo-bracket">/&gt;</span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home"          class="nav-link active" data-link>Home</a></li>
+        <li><a href="#about"         class="nav-link" data-link>About</a></li>
+        <li><a href="#skills"        class="nav-link" data-link>Skills</a></li>
+        <li><a href="#experience"    class="nav-link" data-link>Experience</a></li>
+        <li><a href="#certifications" class="nav-link" data-link>Certs</a></li>
+        <li><a href="#contact"       class="nav-link" data-link>Contact</a></li>
+      </ul>
+      <a href="mailto:krishnanrsfdc@gmail.com" class="nav-cta">Hire Me</a>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ============================
+       HERO
+       ============================ -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <div class="hero-tag reveal-up">
+        <span class="dot"></span> Open to new opportunities
+      </div>
+      <p class="hero-intro reveal-up" style="--delay:0.1s">Hi, I'm</p>
+      <h1 class="hero-title">
+        <span class="name-gradient reveal-up" style="--delay:0.2s">Krishna Nagalla.</span>
+      </h1>
+      <div class="hero-subtitle reveal-up" style="--delay:0.35s">
+        I build <span class="rotating-words" id="rotatingWords">
+          <span class="word active">LWC experiences</span>
+          <span class="word">Apex solutions</span>
+          <span class="word">CRM systems</span>
+          <span class="word">Salesforce apps</span>
+        </span>
+      </div>
+      <p class="hero-desc reveal-up" style="--delay:0.5s">
+        Sr. Salesforce Developer with <strong>8+ years</strong> of enterprise CRM expertise across insurance, government, and tech. Specializing in Lightning Web Components, Apex engineering, and full-lifecycle Salesforce delivery.
+      </p>
+      <div class="hero-actions reveal-up" style="--delay:0.65s">
+        <a href="#experience" class="btn btn-primary">
+          <span>View Experience</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="mailto:krishnanrsfdc@gmail.com" class="btn btn-outline">Get In Touch</a>
+      </div>
+      <div class="hero-stats reveal-up" style="--delay:0.8s">
+        <div class="stat">
+          <span class="stat-num" data-target="8">0</span><span class="stat-plus">+</span>
+          <span class="stat-label">Years Experience</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-num" data-target="9">0</span><span class="stat-plus"></span>
+          <span class="stat-label">Salesforce Certs</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-num" data-target="3">0</span><span class="stat-plus"></span>
+          <span class="stat-label">Major Clients</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-visual reveal-right">
+      <div class="hero-orb orb-1"></div>
+      <div class="hero-orb orb-2"></div>
+      <div class="hero-card">
+        <div class="code-window">
+          <div class="code-header">
+            <span class="dot-red"></span>
+            <span class="dot-yellow"></span>
+            <span class="dot-green"></span>
+            <span class="code-title">KrishnaProfile.cls</span>
+          </div>
+          <pre class="code-body"><code><span class="c-keyword">public class</span> <span class="c-fn">KrishnaProfile</span> {
+  <span class="c-keyword">public static</span> String role <span class="c-op">=</span>
+    <span class="c-str">'Sr. Salesforce Developer'</span>;
+
+  <span class="c-keyword">public static</span> List&lt;String&gt; certs <span class="c-op">=</span>
+    <span class="c-keyword">new</span> List&lt;String&gt;{
+      <span class="c-str">'App Architect'</span>,
+      <span class="c-str">'Data Architect'</span>,
+      <span class="c-str">'Platform Dev II'</span>
+    };
+
+  <span class="c-keyword">public static</span> Boolean
+    available <span class="c-op">=</span> <span class="c-bool">true</span>;
+}</code></pre>
+        </div>
+      </div>
+    </div>
+
+    <div class="scroll-indicator">
+      <div class="scroll-dot"></div>
+      <span>Scroll to explore</span>
+    </div>
+  </section>
+
+  <!-- ============================
+       ABOUT
+       ============================ -->
+  <section class="section about" id="about">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label reveal-up">About Me</span>
+        <h2 class="section-title reveal-up">Who I <span class="gradient-text">Am</span></h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-image-wrap reveal-left">
+          <div class="about-image-container">
+            <div class="about-image-bg"></div>
+            <div class="about-avatar">
+              <svg viewBox="0 0 200 200" class="avatar-svg" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="avatarGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" style="stop-color:#6366f1"/>
+                    <stop offset="100%" style="stop-color:#06b6d4"/>
+                  </linearGradient>
+                </defs>
+                <circle cx="100" cy="78" r="46" fill="url(#avatarGrad)" opacity="0.9"/>
+                <ellipse cx="100" cy="170" rx="66" ry="46" fill="url(#avatarGrad)" opacity="0.9"/>
+                <text x="100" y="96" text-anchor="middle" font-size="52" font-family="Arial" font-weight="bold" fill="white">KN</text>
+              </svg>
+            </div>
+            <div class="about-badge badge-1">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6366f1" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+              <span>LWC Expert</span>
+            </div>
+            <div class="about-badge badge-2">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#06b6d4" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              <span>9 Certifications</span>
+            </div>
+          </div>
+        </div>
+        <div class="about-content reveal-right">
+          <h3 class="about-heading">Enterprise Salesforce solutions <span class="gradient-text">at scale</span></h3>
+          <p class="about-text">
+            I'm a Sr. Salesforce Developer with 8+ years of hands-on experience delivering enterprise CRM solutions across insurance, public sector/government, and large-scale modernization programs. My work spans Lightning-first UI development, Apex backend engineering, and complex integration architectures.
+          </p>
+          <p class="about-text">
+            From building the Amazon Career Choice School Portal on Experience Cloud to modernizing the VA Benefits system at Accenture Federal Services, I've owned full delivery cycles — design, development, UAT, and production support — in Agile teams.
+          </p>
+          <div class="about-info-grid">
+            <div class="info-item">
+              <span class="info-label">Email</span>
+              <a href="mailto:krishnanrsfdc@gmail.com" class="info-value">krishnanrsfdc@gmail.com</a>
+            </div>
+            <div class="info-item">
+              <span class="info-label">Phone</span>
+              <span class="info-value">+1 (512) 553-5660</span>
+            </div>
+            <div class="info-item">
+              <span class="info-label">Location</span>
+              <span class="info-value">Austin, TX</span>
+            </div>
+            <div class="info-item">
+              <span class="info-label">Education</span>
+              <span class="info-value">M.S. Computer Engineering, UAH</span>
+            </div>
+          </div>
+          <div class="about-tags">
+            <span class="tag">LWC</span>
+            <span class="tag">Apex</span>
+            <span class="tag">Experience Cloud</span>
+            <span class="tag">Flows</span>
+            <span class="tag">REST/SOAP APIs</span>
+            <span class="tag">Gearset</span>
+            <span class="tag">Copado</span>
+            <span class="tag">AWS</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================
+       SKILLS
+       ============================ -->
+  <section class="section skills" id="skills">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label reveal-up">Technical Expertise</span>
+        <h2 class="section-title reveal-up">Skills &amp; <span class="gradient-text">Technologies</span></h2>
+      </div>
+      <div class="skills-grid">
+
+        <div class="skill-card reveal-up" style="--delay:0.1s">
+          <div class="skill-icon sf-lwc">
+            <svg viewBox="0 0 40 40" fill="none"><rect width="40" height="40" rx="8" fill="rgba(99,102,241,0.15)"/><path d="M8 28V14l12-6 12 6v14l-12 6-12-6z" stroke="#6366f1" stroke-width="1.8" fill="none"/><path d="M8 14l12 6 12-6M20 20v8" stroke="#6366f1" stroke-width="1.5"/></svg>
+          </div>
+          <h3>Lightning Web Components</h3>
+          <p>Experience Cloud, SLDS, wire adapters, reusable wizards, pagination, modals, performance tuning</p>
+          <div class="skill-bar"><div class="skill-fill" data-width="95"></div></div>
+          <span class="skill-pct">95%</span>
+        </div>
+
+        <div class="skill-card reveal-up" style="--delay:0.15s">
+          <div class="skill-icon">
+            <svg viewBox="0 0 40 40" fill="none"><rect width="40" height="40" rx="8" fill="rgba(6,182,212,0.12)"/><text x="20" y="27" text-anchor="middle" font-size="16" font-weight="bold" fill="#06b6d4" font-family="monospace">Apex</text></svg>
+          </div>
+          <h3>Apex Engineering</h3>
+          <p>Triggers, Batch, Queueable, Schedulable, service-layer architecture, bulk-safe patterns, exception handling</p>
+          <div class="skill-bar"><div class="skill-fill" data-width="93"></div></div>
+          <span class="skill-pct">93%</span>
+        </div>
+
+        <div class="skill-card reveal-up" style="--delay:0.2s">
+          <div class="skill-icon">
+            <svg viewBox="0 0 40 40" fill="none"><rect width="40" height="40" rx="8" fill="rgba(99,102,241,0.12)"/><path d="M10 20h5l4-8 4 16 4-8h3" stroke="#818cf8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>Salesforce Flows</h3>
+          <p>Screen Flows, Record-Triggered, Scheduled Flows, approval processes, avoiding recursion, Flow-Apex orchestration</p>
+          <div class="skill-bar"><div class="skill-fill" data-width="90"></div></div>
+          <span class="skill-pct">90%</span>
+        </div>
+
+        <div class="skill-card reveal-up" style="--delay:0.25s">
+          <div class="skill-icon">
+            <svg viewBox="0 0 40 40" fill="none"><rect width="40" height="40" rx="8" fill="rgba(6,182,212,0.12)"/><circle cx="14" cy="20" r="5" stroke="#06b6d4" stroke-width="1.8"/><circle cx="26" cy="20" r="5" stroke="#06b6d4" stroke-width="1.8"/><path d="M19 20h2" stroke="#06b6d4" stroke-width="2" stroke-linecap="round"/></svg>
+          </div>
+          <h3>Integrations</h3>
+          <p>REST/SOAP APIs, Named Credentials, OAuth, Platform Events, MuleSoft, Dell Boomi, AWS callouts, correlation IDs</p>
+          <div class="skill-bar"><div class="skill-fill" data-width="88"></div></div>
+          <span class="skill-pct">88%</span>
+        </div>
+
+        <div class="skill-card reveal-up" style="--delay:0.3s">
+          <div class="skill-icon">
+            <svg viewBox="0 0 40 40" fill="none"><rect width="40" height="40" rx="8" fill="rgba(99,102,241,0.12)"/><path d="M20 8l2 6h6l-5 4 2 6-5-4-5 4 2-6-5-4h6z" stroke="#a5b4fc" stroke-width="1.8" fill="none"/></svg>
+          </div>
+          <h3>Security &amp; Access Control</h3>
+          <p>OWD, roles, sharing rules, permission sets, profiles, FLS, CRUD enforcement, sharing-aware Apex, SSO</p>
+          <div class="skill-bar"><div class="skill-fill" data-width="92"></div></div>
+          <span class="skill-pct">92%</span>
+        </div>
+
+        <div class="skill-card reveal-up" style="--delay:0.35s">
+          <div class="skill-icon">
+            <svg viewBox="0 0 40 40" fill="none"><rect width="40" height="40" rx="8" fill="rgba(6,182,212,0.12)"/><rect x="10" y="14" width="8" height="12" rx="2" stroke="#22d3ee" stroke-width="1.8"/><rect x="22" y="10" width="8" height="16" rx="2" stroke="#22d3ee" stroke-width="1.8"/><path d="M18 20h4" stroke="#22d3ee" stroke-width="1.5" stroke-dasharray="2 2"/></svg>
+          </div>
+          <h3>DevOps &amp; Release</h3>
+          <p>Copado, Gearset, Change Sets, SFDX, VS Code, Git/Bitbucket, Jenkins, metadata deployments, validation</p>
+          <div class="skill-bar"><div class="skill-fill" data-width="87"></div></div>
+          <span class="skill-pct">87%</span>
+        </div>
+
+        <div class="skill-card reveal-up" style="--delay:0.4s">
+          <div class="skill-icon">
+            <svg viewBox="0 0 40 40" fill="none"><rect width="40" height="40" rx="8" fill="rgba(99,102,241,0.12)"/><path d="M12 28c0-8 4-14 8-14s8 6 8 14" stroke="#6366f1" stroke-width="1.8" fill="none"/><ellipse cx="20" cy="20" rx="10" ry="4" stroke="#6366f1" stroke-width="1.5"/></svg>
+          </div>
+          <h3>Salesforce Clouds</h3>
+          <p>Sales Cloud, Service Cloud, Experience Cloud, Financial Services Cloud, Marketing Cloud administration</p>
+          <div class="skill-bar"><div class="skill-fill" data-width="90"></div></div>
+          <span class="skill-pct">90%</span>
+        </div>
+
+        <div class="skill-card reveal-up" style="--delay:0.45s">
+          <div class="skill-icon">
+            <svg viewBox="0 0 40 40" fill="none"><rect width="40" height="40" rx="8" fill="rgba(6,182,212,0.12)"/><path d="M10 26l6-8 5 5 4-6 5 9" stroke="#06b6d4" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><rect x="10" y="12" width="4" height="4" rx="1" fill="#06b6d4" opacity="0.5"/></svg>
+          </div>
+          <h3>Data Migration</h3>
+          <p>Data Loader, Workbench, dataloader.io, deduplication, reconciliation, batch cleansing, SOQL/SOSL optimization</p>
+          <div class="skill-bar"><div class="skill-fill" data-width="85"></div></div>
+          <span class="skill-pct">85%</span>
+        </div>
+
+        <div class="skill-card reveal-up" style="--delay:0.5s">
+          <div class="skill-icon">
+            <svg viewBox="0 0 40 40" fill="none"><rect width="40" height="40" rx="8" fill="rgba(99,102,241,0.12)"/><rect x="9" y="16" width="10" height="8" rx="2" stroke="#818cf8" stroke-width="1.8"/><rect x="21" y="16" width="10" height="8" rx="2" stroke="#818cf8" stroke-width="1.8"/><path d="M20 14v2M20 24v2M14 12v4M26 12v4" stroke="#818cf8" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+          <h3>AWS Integration</h3>
+          <p>Lambda, S3, API Gateway, IAM, CloudWatch, SNS, SQS — token-based auth and end-to-end log tracing</p>
+          <div class="skill-bar"><div class="skill-fill" data-width="78"></div></div>
+          <span class="skill-pct">78%</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================
+       EXPERIENCE
+       ============================ -->
+  <section class="section experience" id="experience">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label reveal-up">Professional Journey</span>
+        <h2 class="section-title reveal-up">Work <span class="gradient-text">Experience</span></h2>
+      </div>
+
+      <!-- Timeline -->
+      <div class="timeline">
+
+        <!-- Amazon -->
+        <div class="timeline-item reveal-up" style="--delay:0.1s">
+          <div class="timeline-marker">
+            <div class="timeline-dot"></div>
+            <div class="timeline-line"></div>
+          </div>
+          <div class="exp-card">
+            <div class="exp-header">
+              <div class="exp-company-wrap">
+                <div class="exp-company-logo amazon">
+                  <svg width="28" height="28" viewBox="0 0 40 40" fill="none"><rect width="40" height="40" rx="8" fill="rgba(255,153,0,0.15)"/><path d="M10 24c3-1 6.5-1.5 10-1.5s7 .5 10 1.5" stroke="#FF9900" stroke-width="2" stroke-linecap="round"/><path d="M29 22l2 2-2 2" stroke="#FF9900" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><text x="20" y="19" text-anchor="middle" font-size="10" font-weight="bold" fill="#FF9900" font-family="Arial">amzn</text></svg>
+                </div>
+                <div>
+                  <h3 class="exp-title">Sr. Salesforce Developer</h3>
+                  <span class="exp-company">Amazon &mdash; Austin, TX</span>
+                </div>
+              </div>
+              <div class="exp-meta">
+                <span class="exp-date">June 2024 &ndash; Present</span>
+                <span class="exp-badge current">Current</span>
+              </div>
+            </div>
+            <p class="exp-overview">
+              Worked on Amazon's <strong>Career Choice</strong> program — Salesforce powers the end-to-end flow for associate education benefits: applications, enrollments, approvals, tuition payments, completions, and partner-school collaboration via the Experience Cloud School Portal.
+            </p>
+            <ul class="exp-bullets">
+              <li>Built LWC components for Experience Cloud School Portal with payment request submission, graduation confirmation, and placement reporting using SLDS and guided flows</li>
+              <li>Implemented portal work-queue experiences with searchable datatables, server-side pagination, modal-driven actions, and multi-step wizards for high-volume processing</li>
+              <li>Developed Apex service-layer classes with bulk-safe patterns, predictable error handling, and optimized SOQL (map-based processing, relationship queries, heap-safe loops)</li>
+              <li>Built async automation via Queueable, Batch Apex, and Scheduler for reconciliation jobs, nightly maintenance, and retry-friendly large dataset processing</li>
+              <li>Integrated Salesforce with AWS-backed services using token-based auth callouts with correlation IDs for end-to-end log tracing across Salesforce and AWS</li>
+              <li>Owned deployments via Gearset — metadata promotion, validation, and post-deploy smoke testing across environments</li>
+            </ul>
+            <div class="exp-tags">
+              <span class="ptag">Experience Cloud</span>
+              <span class="ptag">LWC</span>
+              <span class="ptag">Apex</span>
+              <span class="ptag">Batch/Queueable</span>
+              <span class="ptag">AWS</span>
+              <span class="ptag">Gearset</span>
+              <span class="ptag">Platform Events</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- AFS / VA -->
+        <div class="timeline-item reveal-up" style="--delay:0.2s">
+          <div class="timeline-marker">
+            <div class="timeline-dot"></div>
+            <div class="timeline-line"></div>
+          </div>
+          <div class="exp-card">
+            <div class="exp-header">
+              <div class="exp-company-wrap">
+                <div class="exp-company-logo afs">
+                  <svg width="28" height="28" viewBox="0 0 40 40" fill="none"><rect width="40" height="40" rx="8" fill="rgba(99,102,241,0.15)"/><text x="20" y="25" text-anchor="middle" font-size="11" font-weight="bold" fill="#818cf8" font-family="Arial">AFS</text></svg>
+                </div>
+                <div>
+                  <h3 class="exp-title">Salesforce Developer</h3>
+                  <span class="exp-company">Accenture Federal Services &mdash; U.S. Dept. of Veterans Affairs</span>
+                </div>
+              </div>
+              <div class="exp-meta">
+                <span class="exp-date">Mar 2020 &ndash; May 2024</span>
+                <span class="exp-badge govt">Gov&rsquo;t</span>
+              </div>
+            </div>
+            <p class="exp-overview">
+              Greenfield Salesforce modernization program for the <strong>U.S. Department of Veterans Affairs (Benefits)</strong> — replacing an aging system with a new Salesforce Lightning platform built entirely in LWC to improve scalability, compliance, and long-term maintainability.
+            </p>
+            <ul class="exp-bullets">
+              <li>Built and enhanced LWC components for VA benefits workflows: guided user journeys, record utilities, quick actions, and reusable UI components aligned to federal compliance</li>
+              <li>Developed Apex controllers and service classes with bulk-safe patterns and consistent validation across UI, integrations, and data operations</li>
+              <li>Implemented async processing (Batch/Queueable/Scheduled Apex) for data synchronization, periodic maintenance, and reporting-ready updates</li>
+              <li>Designed integrations with external systems via Named Credentials, Apex REST services, and standardized auth patterns</li>
+              <li>Built Flows (Screen, Record-Triggered, Scheduled) and Approvals ensuring smooth interaction with Apex logic and avoiding recursion</li>
+              <li>Enforced CRUD/FLS checks in Apex, sharing-aware queries, and partnered with admins on permission set strategy for federal compliance</li>
+              <li>Performed data migration using Data Loader/Workbench with deduplication, reconciliation, and validation against upstream sources</li>
+            </ul>
+            <div class="exp-tags">
+              <span class="ptag">LWC</span>
+              <span class="ptag">Apex</span>
+              <span class="ptag">Flows</span>
+              <span class="ptag">Named Credentials</span>
+              <span class="ptag">Copado</span>
+              <span class="ptag">Data Loader</span>
+              <span class="ptag">SFDX</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hippo Insurance -->
+        <div class="timeline-item reveal-up" style="--delay:0.3s">
+          <div class="timeline-marker">
+            <div class="timeline-dot"></div>
+          </div>
+          <div class="exp-card">
+            <div class="exp-header">
+              <div class="exp-company-wrap">
+                <div class="exp-company-logo hippo">
+                  <svg width="28" height="28" viewBox="0 0 40 40" fill="none"><rect width="40" height="40" rx="8" fill="rgba(6,182,212,0.15)"/><text x="20" y="25" text-anchor="middle" font-size="10" font-weight="bold" fill="#22d3ee" font-family="Arial">HIPPO</text></svg>
+                </div>
+                <div>
+                  <h3 class="exp-title">Salesforce Developer</h3>
+                  <span class="exp-company">Hippo Insurance</span>
+                </div>
+              </div>
+              <div class="exp-meta">
+                <span class="exp-date">May 2017 &ndash; Feb 2020</span>
+                <span class="exp-badge insurance">InsurTech</span>
+              </div>
+            </div>
+            <p class="exp-overview">
+              Salesforce modernization program migrating from <strong>Salesforce Classic to Lightning Experience</strong> — rebuilding internal workflows from Visualforce to Aura Lightning to improve agent usability and strengthen policy and claim operations.
+            </p>
+            <ul class="exp-bullets">
+              <li>Supported insurance customer operations via Service Cloud using Case Management, workflow automation, and servicing task tracking</li>
+              <li>Worked with Financial Services Cloud (FSC) to enhance policyholder relationship visibility for servicing teams</li>
+              <li>Migrated internal user journeys from Visualforce to Aura Lightning with improved UX while preserving core business logic</li>
+              <li>Developed Apex custom controllers, triggers with helper patterns, and Visualforce PDF rendering for policy/claims document workflows</li>
+              <li>Built Scheduled Apex for periodic processing, cleanup routines, and operational status refresh tasks</li>
+              <li>Managed deployments via Change Sets; worked in Agile sprints with UAT support and production triage</li>
+            </ul>
+            <div class="exp-tags">
+              <span class="ptag">Service Cloud</span>
+              <span class="ptag">FSC</span>
+              <span class="ptag">Aura</span>
+              <span class="ptag">Visualforce</span>
+              <span class="ptag">Apex Triggers</span>
+              <span class="ptag">Change Sets</span>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /timeline -->
+    </div>
+  </section>
+
+  <!-- ============================
+       CERTIFICATIONS
+       ============================ -->
+  <section class="section certifications" id="certifications">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label reveal-up">Credentials</span>
+        <h2 class="section-title reveal-up">Salesforce <span class="gradient-text">Certifications</span></h2>
+        <p class="section-sub reveal-up">9 active Salesforce certifications &mdash; from Developer to Architect track</p>
+      </div>
+
+      <!-- Official Salesforce Badge Strip -->
+      <div class="cert-badges-wrap reveal-up" style="--delay:0.1s">
+        <img
+          src="assets/cert-badges.png"
+          alt="9 Salesforce Certifications: Platform Administrator, Platform Developer I & II, Platform App Builder, Sales Cloud Consultant, Service Cloud Consultant, Application Architect, Data Architect, Sharing and Visibility Architect"
+          class="cert-badges-img"
+          draggable="false"
+        />
+      </div>
+
+      <div class="certs-grid">
+
+        <div class="cert-card reveal-up" style="--delay:0.05s">
+          <div class="cert-icon arch">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          </div>
+          <div class="cert-info">
+            <h4>Application Architect</h4>
+            <span class="cert-track arch-track">Architect Track</span>
+          </div>
+          <div class="cert-check">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+        </div>
+
+        <div class="cert-card reveal-up" style="--delay:0.1s">
+          <div class="cert-icon arch">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><ellipse cx="12" cy="12" rx="10" ry="10"/><path d="M12 6v6l4 2"/></svg>
+          </div>
+          <div class="cert-info">
+            <h4>Data Architect</h4>
+            <span class="cert-track arch-track">Architect Track</span>
+          </div>
+          <div class="cert-check">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+        </div>
+
+        <div class="cert-card reveal-up" style="--delay:0.15s">
+          <div class="cert-icon arch">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+          </div>
+          <div class="cert-info">
+            <h4>Sharing &amp; Visibility Architect</h4>
+            <span class="cert-track arch-track">Architect Track</span>
+          </div>
+          <div class="cert-check">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+        </div>
+
+        <div class="cert-card reveal-up" style="--delay:0.2s">
+          <div class="cert-icon dev">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+          </div>
+          <div class="cert-info">
+            <h4>Platform Developer II</h4>
+            <span class="cert-track dev-track">Developer Track</span>
+          </div>
+          <div class="cert-check">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+        </div>
+
+        <div class="cert-card reveal-up" style="--delay:0.25s">
+          <div class="cert-icon dev">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          </div>
+          <div class="cert-info">
+            <h4>Platform Developer I</h4>
+            <span class="cert-track dev-track">Developer Track</span>
+          </div>
+          <div class="cert-check">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+        </div>
+
+        <div class="cert-card reveal-up" style="--delay:0.3s">
+          <div class="cert-icon admin">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M6 20v-2a6 6 0 0112 0v2"/></svg>
+          </div>
+          <div class="cert-info">
+            <h4>Platform Administrator</h4>
+            <span class="cert-track admin-track">Admin Track</span>
+          </div>
+          <div class="cert-check">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+        </div>
+
+        <div class="cert-card reveal-up" style="--delay:0.35s">
+          <div class="cert-icon admin">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h6M9 13h6M9 17h4"/></svg>
+          </div>
+          <div class="cert-info">
+            <h4>Platform App Builder</h4>
+            <span class="cert-track admin-track">Admin Track</span>
+          </div>
+          <div class="cert-check">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+        </div>
+
+        <div class="cert-card reveal-up" style="--delay:0.4s">
+          <div class="cert-icon consultant">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+          </div>
+          <div class="cert-info">
+            <h4>Sales Cloud Consultant</h4>
+            <span class="cert-track consultant-track">Consultant Track</span>
+          </div>
+          <div class="cert-check">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+        </div>
+
+        <div class="cert-card reveal-up" style="--delay:0.45s">
+          <div class="cert-icon consultant">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+          </div>
+          <div class="cert-info">
+            <h4>Service Cloud Consultant</h4>
+            <span class="cert-track consultant-track">Consultant Track</span>
+          </div>
+          <div class="cert-check">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================
+       CONTACT
+       ============================ -->
+  <section class="section contact" id="contact">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label reveal-up">Get In Touch</span>
+        <h2 class="section-title reveal-up">Let's <span class="gradient-text">Connect</span></h2>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-info reveal-left">
+          <p class="contact-text">
+            I'm always open to discussing new Salesforce projects, contract roles, or full-time opportunities. Let's talk about how I can help your team.
+          </p>
+          <div class="contact-items">
+            <a href="mailto:krishnanrsfdc@gmail.com" class="contact-item">
+              <div class="contact-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              </div>
+              <div>
+                <span class="contact-label">Email</span>
+                <span class="contact-value">krishnanrsfdc@gmail.com</span>
+              </div>
+            </a>
+            <a href="tel:+15125535660" class="contact-item">
+              <div class="contact-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8a19.79 19.79 0 01-3.07-8.63A2 2 0 012 .18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7a2 2 0 011.72 2.02z"/></svg>
+              </div>
+              <div>
+                <span class="contact-label">Phone</span>
+                <span class="contact-value">+1 (512) 553-5660</span>
+              </div>
+            </a>
+            <div class="contact-item">
+              <div class="contact-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              </div>
+              <div>
+                <span class="contact-label">Location</span>
+                <span class="contact-value">Austin, TX</span>
+              </div>
+            </div>
+          </div>
+          <div class="social-links">
+            <a href="https://www.linkedin.com/in/krishna-nagalla" target="_blank" rel="noopener" class="social-link" aria-label="LinkedIn">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            </a>
+            <a href="mailto:krishnanrsfdc@gmail.com" class="social-link" aria-label="Email">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </a>
+            <a href="tel:+15125535660" class="social-link" aria-label="Phone">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8a19.79 19.79 0 01-3.07-8.63A2 2 0 012 .18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7a2 2 0 011.72 2.02z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <form class="contact-form reveal-right" id="contactForm">
+          <div class="form-group">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" placeholder="John Doe" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="john@example.com" required />
+          </div>
+          <div class="form-group">
+            <label for="subject">Subject</label>
+            <input type="text" id="subject" name="subject" placeholder="Salesforce Contract Role" required />
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" placeholder="Tell me about your project or opportunity..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-full">
+            <span>Send Message</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <span class="footer-logo"><span class="logo-bracket">&lt;</span>Krishna Nagalla<span class="logo-bracket">/&gt;</span></span>
+        <p class="footer-text">Sr. Salesforce Developer &mdash; Austin, TX &mdash; &copy; 2026</p>
+        <a href="#home" class="back-top" aria-label="Back to top">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"/></svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
