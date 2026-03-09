@@ -392,24 +392,40 @@ document.querySelectorAll('.btn-primary, .nav-cta').forEach(btn => {
 /* ---- Contact Form ---- */
 const contactForm = document.getElementById('contactForm');
 if (contactForm) {
-  contactForm.addEventListener('submit', (e) => {
+  contactForm.addEventListener('submit', async (e) => {
     e.preventDefault();
     const btn = contactForm.querySelector('button[type="submit"]');
     btn.innerHTML = '<span>Sending...</span>';
     btn.disabled = true;
 
-    setTimeout(() => {
-      contactForm.innerHTML = `
-        <div class="form-success">
-          <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-            <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/>
-            <polyline points="22 4 12 14.01 9 11.01"/>
-          </svg>
-          <h3>Message Sent!</h3>
-          <p>Thanks for reaching out. I'll get back to you within 24 hours.</p>
-        </div>
-      `;
-    }, 1200);
+    try {
+      const res = await fetch('https://formspree.io/f/mjgagavw', {
+        method: 'POST',
+        headers: { 'Accept': 'application/json' },
+        body: new FormData(contactForm)
+      });
+
+      if (res.ok) {
+        contactForm.innerHTML = `
+          <div class="form-success">
+            <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/>
+              <polyline points="22 4 12 14.01 9 11.01"/>
+            </svg>
+            <h3>Message Sent!</h3>
+            <p>Thanks for reaching out. I'll get back to you within 24 hours.</p>
+          </div>
+        `;
+      } else {
+        btn.innerHTML = '<span>Send Message</span>';
+        btn.disabled = false;
+        alert('Something went wrong. Please try again.');
+      }
+    } catch {
+      btn.innerHTML = '<span>Send Message</span>';
+      btn.disabled = false;
+      alert('Network error. Please try again.');
+    }
   });
 }
 
