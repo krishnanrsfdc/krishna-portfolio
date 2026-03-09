@@ -56,7 +56,7 @@ ul { list-style: none; }
 
 /* --- Scrollbar --- */
 ::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-track { background: transparent; }
 ::-webkit-scrollbar-thumb { background: var(--indigo); border-radius: 99px; }
 
 /* --- Canvas --- */
@@ -628,7 +628,7 @@ ul { list-style: none; }
 /* ==========================================
    ABOUT
    ========================================== */
-.about { background: linear-gradient(180deg, var(--bg) 0%, var(--bg-2) 100%); }
+.about { background: transparent; }
 
 .about-grid {
   display: grid;
@@ -663,7 +663,7 @@ ul { list-style: none; }
   inset: 0;
   border-radius: 24px;
   overflow: hidden;
-  background: linear-gradient(135deg, var(--bg-3), var(--bg-2));
+  background: transparent;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -764,7 +764,7 @@ a.info-value:hover { color: var(--cyan); }
 /* ==========================================
    SKILLS
    ========================================== */
-.skills { background: var(--bg); }
+.skills { background: transparent; }
 
 .skills-grid {
   display: grid;
@@ -848,7 +848,7 @@ a.info-value:hover { color: var(--cyan); }
 /* ==========================================
    EXPERIENCE / TIMELINE
    ========================================== */
-.experience { background: linear-gradient(180deg, var(--bg) 0%, var(--bg-2) 100%); }
+.experience { background: transparent; }
 
 .timeline { display: flex; flex-direction: column; gap: 0; position: relative; }
 
@@ -1003,7 +1003,7 @@ a.info-value:hover { color: var(--cyan); }
 /* ==========================================
    PROJECTS
    ========================================== */
-.projects { background: linear-gradient(180deg, var(--bg) 0%, var(--bg-2) 100%); }
+.projects { background: transparent; }
 
 .projects-grid {
   display: grid;
@@ -1128,7 +1128,7 @@ a.info-value:hover { color: var(--cyan); }
 /* ==========================================
    CERTIFICATIONS
    ========================================== */
-.certifications { background: var(--bg); }
+.certifications { background: transparent; }
 
 .section-sub {
   font-size: 0.95rem;
@@ -1262,7 +1262,7 @@ a.info-value:hover { color: var(--cyan); }
 /* ==========================================
    CONTACT
    ========================================== */
-.contact { background: var(--bg); }
+.contact { background: transparent; }
 
 .contact-grid {
   display: grid;
@@ -1395,7 +1395,7 @@ a.contact-item:hover .contact-value { color: var(--indigo); }
 .footer {
   padding: 36px 0;
   border-top: 1px solid var(--glass-border);
-  background: var(--bg);
+  background: transparent;
   position: relative;
   z-index: 1;
 }
